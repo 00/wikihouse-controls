@@ -1,0 +1,51 @@
+sitemap wikihouse label="Wikihouse 4.0 controls"
+{
+	Frame label="Controls"  {
+		Group item=WHAll label="System" icon="house"  {
+			Group item=WHAll label="Information" icon="house"  {
+				Text label="Wikihouse" 				
+				Image label="Wikihouse Logo" url="http://192.168.1.10/img/wikihouse_logo_small.png" 				
+			}			
+			Group item=ShutdownSwitch label="Shutdown"  {
+				Switch item=ShutdownSwitch
+				Switch item=RebootSwitch
+			}			
+		}		
+	}	
+	Frame label="Rooms"  {
+		Group item=WHgGF label="Rooms" icon="groundfloor"  {
+			Group item=WHGF_Living  {
+				Slider item=Light_GF_Living_Zone1 switchSupport 				
+				Slider item=Light_GF_Living_Zone2 switchSupport 				
+				Slider item=Light_GF_Living_Zone3 switchSupport 				
+				Slider item=Light_GF_Living_Zone4 switchSupport 				
+				Switch item=WHVentilation		
+				Text item=Temperature_GF_Living 				
+			}			
+			Group item=WHGF_Kitchen  {
+				Slider item=Light_GF_Kitchen_Zone1 switchSupport 				
+				Slider item=Light_GF_Kitchen_Zone2 switchSupport 				
+				Switch item=WHVentilation		
+				Text item=Temperature_GF_Kitchen 				
+			}			
+			Group item=WHGF_Storage  {
+				Slider item=Light_GF_Storage switchSupport 				
+			}			
+			Group item=WHGF_Stairs  {
+				Slider item=Light_GF_Stairs switchSupport 				
+			}			
+		}		
+	}	
+	Frame label="Lights"  {
+		Group item=WHLights label="Lighting" icon="slider"  {
+			Slider item=DMXChannel1 			
+			Slider item=DMXChannel2 			
+			Slider item=DMXChannel3 			
+			Slider item=DMXChannel4 			
+			Slider item=DMXChannel6 			
+			Slider item=DMXChannel5 			
+			Slider item=DMXChannel7 			
+			Slider item=DMXChannel8 			
+		}		
+	}	
+}

@@ -1,0 +1,54 @@
+// Groups
+Group	WHAll
+Group	WHControls
+Group	WHgGF	(WHAll)	
+Group	WHgC	(WHAll)	
+Group	WHWeather	(WHAll)	
+Group	WHStatus	(WHAll)	
+Group	WHGF_Living	"Living Room"	<office>	(WHgGF)	
+Group	WHGF_Kitchen	"Kitchen"	<kitchen>	(WHgGF)	
+Group	WHGF_Storage	"Storage"	<energy>	(WHgGF)	
+Group	WHGF_Stairs	"Stairs"	<house>	(WHgGF)	
+Group:Number:AVG()	WHTemperature	"Avg. Room Temperature [%.1f °C]"	<temperature>	(WHStatus)	
+
+
+// Switches
+Switch	WHLights	"All Lights [(%d )]"	<slider>	(WHAll)	
+Switch  WHVentilation {mqtt=">[m2m-wikihouse:vents:command:ON:150],>[m2m-wikihouse:vents:command:OFF:0]"}
+
+// Dimmers
+Dimmer	Light_GF_Living_Zone1	"Living Room Light 1"	(WHGF_Living,WHLights)		{ dmx="CHANNEL[1]" }
+Dimmer	Light_GF_Living_Zone2	"Living Room Light 2"	(WHGF_Living,WHLights)		{ dmx="CHANNEL[2]" }
+Dimmer	Light_GF_Living_Zone3	"Living Room Light 3"	(WHGF_Living,WHLights)		{ dmx="CHANNEL[3]" }
+Dimmer	Light_GF_Living_Zone4	"Living Room Light 4"	(WHGF_Living,WHLights)		{ dmx="CHANNEL[4]" }
+Dimmer	Light_GF_Storage	"Storage Room Light"	(WHGF_Storage,WHLights)		{ dmx="CHANNEL[5]" }
+Dimmer	Light_GF_Stairs		"Stairs Light"		(WHGF_Stairs,WHLights)		{ dmx="CHANNEL[6]" }
+Dimmer	Light_GF_Kitchen_Zone1	"Kitchen Light 1"	(WHGF_Kitchen,WHLights)		{ dmx="CHANNEL[7]" }
+Dimmer	Light_GF_Kitchen_Zone2	"Kitchen Light 2"	(WHGF_Kitchen,WHLights)		{ dmx="CHANNEL[8]" }
+
+Dimmer	WH_Ventilation_GF_Living	"Living Room Fan"	<wind>	(WHGF_Living)	
+Dimmer	WH_Ventilation_GF_Kitchen	"Kitchen Fan"	<wind>	(WHGF_Kitchen)	
+
+Dimmer	DMXChannel1	"Living room light 1"	<slider>	(WHAll)		{ dmx="CHANNEL[1]" }
+Dimmer	DMXChannel2	"Living room light 2"	<slider>	(WHAll)		{ dmx="CHANNEL[2]" }
+Dimmer	DMXChannel3	"Living room light 3"	<slider>	(WHAll)		{ dmx="CHANNEL[3]" }
+Dimmer	DMXChannel4	"Living room light 4"	<slider>	(WHAll)		{ dmx="CHANNEL[4]" }
+Dimmer	DMXChannel5	"Stairs light"	<slider>	(WHAll)		{ dmx="CHANNEL[6]" }
+Dimmer	DMXChannel6	"Storage room light"	<slider>	(WHAll)		{ dmx="CHANNEL[5]" }
+Dimmer	DMXChannel7	"Kitchen light 1"	<slider>	(WHAll)		{ dmx="CHANNEL[7]" }
+Dimmer	DMXChannel8	"Kitchen light 2"	<slider>	(WHAll)		{ dmx="CHANNEL[8]" }
+
+// Sensors
+Number	Temperature_GF_Living	"Living Room Temperature [%.1f °C]"	<temperature>	(WHGF_Living)	{mqtt="<[m2m-wikihouse:temperature:state:REGEX((.*))]"}
+Number	Temperature_GF_Kitchen	"Kitchen Temperature [%.1f °C]"	<temperature>	(WHGF_Kitchen)	{mqtt="<[m2m-wikihouse:temperature:state:REGEX((.*))]"}
+Number  Humidity_GF_Kitchen  "Kitchen Humidity [%.1f %]" <humidity>   (WHGF_Kitchen)  {mqtt="<[m2m-wikihouse:humidity:state:default]"}
+
+//DateTime	Date	"Date [%1$tA, %1$td.%1$tm.%1$tY]"	<calendar>	{ ntp="Europe/London:en_GB" }
+
+// System controls
+Switch	ShutdownSwitch	"Shutdown Wikihouse"		(WHControls) 	{ exec="ON:/opt/openhab/configurations/scripts/shutdown.sh" }
+Switch  RebootSwitch  "Reboot Wikihouse"            (WHControls)    { exec="ON:/opt/openhab/configurations/scripts/reboot.sh" }
+
+// Voice control
+String 	VoiceCommand
+

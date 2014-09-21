@@ -1,0 +1,25 @@
+import org.openhab.core.library.types.*
+import org.openhab.core.persistence.*
+import org.openhab.model.script.actions.*
+
+var Number counter = 1
+var Timer timer = null
+
+rule VoiceControl
+when
+   Item VoiceCommand received command
+then
+   val light = switch(receivedCommand.toString.lowerCase) {
+        case "light on"    : 95
+        case "light off" : 0
+   }
+    DMXChannel1.sendCommand(light)
+    DMXChannel2.sendCommand(light)
+    DMXChannel3.sendCommand(light)
+    DMXChannel4.sendCommand(light)
+    DMXChannel5.sendCommand(light)
+    DMXChannel6.sendCommand(light)
+    DMXChannel7.sendCommand(light)
+    DMXChannel8.sendCommand(light)
+end
+

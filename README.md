@@ -49,7 +49,7 @@ The house electrical and control system schematic is shown below.
 ## Adafruit Motor Shield V2.0
 
 # Building automation
-## Olimex Olinuxono A20 Micro
+## Olimex Olinuxino A20 Micro
 ## Debian Linux
 ## openHAB
 ## nginx web server

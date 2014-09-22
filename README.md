@@ -1,4 +1,12 @@
 wikihouse-controls
 ==================
 
-The WikiHouse 4.0 Controls project.
+Welcome to the WikiHouse 4.0 Controls project.
+
+[TOC]
+
+
+Design principles
+-----------------
+
+

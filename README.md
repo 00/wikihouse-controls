@@ -24,7 +24,7 @@ We are very excited to share this system with you because the building services 
 
 The house electrical and control system schematic is shown below.
 
-(https://raw.githubusercontent.com/00/wikihouse-controls/master/pictures/wikihouse_controls_schematic_2014-09-22.png "Wikihouse 4.0 Controls Schematic")
+(https://raw.githubusercontent.com/00/wikihouse-controls/master/pictures/wikihouse_controls_schematic_2014-09-22.png)
 
 # DC Power and Data Network
 ## Power over Ethernet

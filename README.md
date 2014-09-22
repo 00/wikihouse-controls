@@ -38,7 +38,6 @@ The house electrical and control system schematic is shown below.
 ## High colour rendering LEDs
 ## Pluggable lighting track connectors
 ## DMX
-### Open Lighting Architecture
 
 # Sensors
 ## Arduino Ethernet Boards and Shields
@@ -54,6 +53,8 @@ The house electrical and control system schematic is shown below.
 ## Debian Linux
 ## openHAB
 ## nginx web server
+## mosquitto MQTT broker
+## Open Lighting Architecture (OLA)
 
 
 
